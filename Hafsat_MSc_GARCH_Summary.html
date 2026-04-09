@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exchange Rate Volatility – GARCH Study</title>
+
+<!-- MathJax -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+body {
+    font-family: "Times New Roman", serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    line-height: 1.8;
+    color: #111;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+}
+
+h2 {
+    margin-top: 40px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+h3 {
+    margin-top: 25px;
+}
+
+p {
+    text-align: justify;
+}
+
+.toc {
+    background: #f5f5f5;
+    padding: 15px;
+    border-left: 4px solid #333;
+    margin: 30px 0;
+}
+
+.abstract {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fafafa;
+    border-left: 4px solid #000;
+}
+
+.eq {
+    text-align: center;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.figure {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 0.9em;
+    color: #444;
+}
+
+.footer {
+    margin-top: 60px;
+    font-size: 0.85em;
+    text-align: center;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Modelling and Forecasting Nigeria Exchange Rate Volatility Using GARCH Models</h1>
+<p style="text-align:center;"><strong>MSc Thesis Summary</strong></p>
+
+<div class="abstract">
+<strong>Abstract:</strong>
+This study investigates exchange rate volatility in Nigeria using GARCH and EGARCH models across multiple currencies. Empirical findings reveal persistent volatility, strong ARCH effects, and superior performance of EGARCH models. Contrary to conventional financial theory, a positive leverage effect is observed.
+</div>
+
+<div class="toc">
+<strong>Table of Contents</strong>
+<ol>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#facts">Stylised Facts</a></li>
+<li><a href="#method">Methodology</a></li>
+<li><a href="#garch">GARCH Model</a></li>
+<li><a href="#egarch">EGARCH Model</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<h2 id="intro">1. Introduction</h2>
+<p>
+Following the 2023 exchange rate unification policy, Nigeria transitioned to a managed float regime. This resulted in heightened exchange rate volatility, with significant depreciation of the Naira and rising inflationary pressures.
+</p>
+
+<h2 id="facts">2. Stylised Facts of Financial Time Series</h2>
+<ul>
+<li>Volatility clustering</li>
+<li>Leptokurtic distributions</li>
+<li>Persistence of shocks</li>
+<li>Asymmetric volatility response</li>
+</ul>
+
+<h2 id="method">3. Methodology</h2>
+
+<h3>3.1 Return Series</h3>
+<div class="eq">
+\[
+r_t = \ln\left(\frac{P_t}{P_{t-1}}\right) \tag{1}
+\]
+</div>
+
+<h2 id="garch">4. GARCH(1,1) Model</h2>
+
+<div class="eq">
+\[
+\sigma_t^2 = \omega + \alpha \varepsilon_{t-1}^2 + \beta \sigma_{t-1}^2 \tag{2}
+\]
+</div>
+
+<p>
+Volatility persistence is given by \( \alpha + \beta \).
+</p>
+
+<h2 id="egarch">5. EGARCH Model</h2>
+
+<div class="eq">
+\[
+\ln(\sigma_t^2) =
+\omega + \beta \ln(\sigma_{t-1}^2)
++ \alpha \left(\frac{|\varepsilon_{t-1}|}{\sigma_{t-1}} - \sqrt{\frac{2}{\pi}}\right)
++ \gamma \frac{\varepsilon_{t-1}}{\sigma_{t-1}} \tag{3}
+\]
+</div>
+
+<p>
+The parameter \( \gamma \) captures asymmetry (leverage effects).
+</p>
+
+<h2 id="results">6. Empirical Results</h2>
+<ul>
+<li>High persistence (\( \alpha + \beta \approx 1 \))</li>
+<li>Significant ARCH effects across currencies</li>
+<li>EGARCH provides superior fit</li>
+<li>Evidence of positive leverage effect</li>
+</ul>
+
+<div class="figure">
+[Figure 1: Volatility Clustering Plot – Insert your graph here]
+</div>
+
+<h2 id="conclusion">7. Conclusion</h2>
+<p>
+The study confirms that GARCH-family models effectively capture exchange rate volatility in Nigeria. However, the presence of a positive leverage effect suggests deviations from traditional financial market behavior, warranting localized modelling approaches.
+</p>
+
+<div class="footer">
+<p>Academic Summary | Hosted on abuidiiro.io</p>
+</div>
+
+</body>
+</html>
